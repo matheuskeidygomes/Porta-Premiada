@@ -10,10 +10,13 @@ export default function Game() {
     const [ doors, setDoors ] = useState(createDoors(+door, +present));
     const [ validDoor, setValidDoor ] = useState(false);
 
-    useEffect(()=> {
+    useEffect(()=> { 
 
       const validDoor = door >= 3 && door <= 100;
-      const validPresent = present >= 1 && present <= door;
+      const validPresent = +present >= 1 && +present <= door;
+
+      console.log(validDoor);
+      console.log(validPresent);
 
       setValidDoor(validDoor && validPresent);
 
